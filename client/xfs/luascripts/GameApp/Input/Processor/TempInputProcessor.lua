@@ -24,6 +24,24 @@ function TempInputProcessor:onInit()
 	BaseInputProcessor.onInit(self)
 
 	self.actionMapKey = HotkeyConst.INPUT_MAP_ACTION_KEY.Temp
+
+	if not TempInputProcessor._joyInstalled then -- [JOYSTICK] show virtual joystick on PC
+		TempInputProcessor._joyInstalled = true
+		local TM = require("Core.Timer.TimerManager")
+		TM.addRepeatTimer(0.1, function()
+			TempInputProcessor._joyTick = (TempInputProcessor._joyTick or 0) + 1
+			if TempInputProcessor._joyTick == 50 then
+				local ok, err = pcall(function()
+					if pg.global.ui.mobileOperate then
+						pg.global.ui.mobileOperate:open()
+					else
+						pg.global.ui:open(UIConst.UI_ID_HUD_MOBILE_OPERATE)
+					end
+				end)
+				print("[JOYSTICK] open ok=" .. tostring(ok) .. " err=" .. tostring(err))
+			end
+		end)
+	end
 end
 
 function TempInputProcessor:handleActionTriggered(inputInfo)
