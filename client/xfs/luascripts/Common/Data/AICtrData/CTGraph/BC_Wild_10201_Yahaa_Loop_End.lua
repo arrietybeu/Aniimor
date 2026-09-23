@@ -1,0 +1,111 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Common\\Data\\AICtrData\\CTGraph\\BC_Wild_10201_Yahaa_Loop_End.lua
+
+local CTHelper = require("Common.AI.ConditionTrigger.CTHelper")
+local _M = {}
+local _C = CTHelper.SafeCall
+local _A = CTHelper.DoAction
+
+function _M.executeTickLodTrigger(flow)
+	return _M._to_41_0(flow)
+end
+
+function _M._to_41_0(flow)
+	local _0 = _M._get_33_3(flow)
+
+	if _0 then
+		flow:setActive()
+		_A(flow, "AddAITag", 0, "AnimationEnd")
+
+		return true
+	else
+		flow:setActiveFail()
+	end
+end
+
+function _M._get_32_3(flow)
+	local _0 = _C(30, "GetAoiEntityTableByLevel", flow, 0, 30, 256)
+	local _1 = flow:getTempList()
+
+	for k, v in pairs(_0) do
+		flow:setCache(32, "__iterItem", v)
+
+		if _M._get_48_2(flow) then
+			_1[#_1 + 1] = v
+		end
+	end
+
+	return _1
+end
+
+function _M._get_32_2(flow)
+	return flow:getCache(32, "__iterItem")
+end
+
+function _M._get_33_3(flow)
+	local _3 = _M._get_32_3(flow)
+	local _0 = not _3 or next(_3) == nil
+
+	if not _0 then
+		return false
+	end
+
+	local _4 = _M._get_35_0(flow)
+	local _1 = _C(34, "IsInBehavTag", flow, _4, "TB_Mimicry_HeadOut_Loop")
+
+	if not _1 then
+		return false
+	end
+
+	local _5 = _M._get_35_0(flow)
+	local _6 = _C(36, "HasAITag", flow, _5, "AnimationEnd")
+	local _2 = not _6
+
+	if not _2 then
+		return false
+	end
+
+	return true
+end
+
+function _M._get_35_0(flow)
+	return _C(35, "GetSelfId", flow)
+end
+
+function _M._get_46_2(flow)
+	local _0 = flow:getCache(47, "__iterItem")
+
+	return _C(46, "HasEntityTag", flow, _0, "TE_Env_CE_Budclaw_A")
+end
+
+function _M._get_47_2(flow)
+	local _3 = _M._get_32_2(flow)
+	local _0 = _C(43, "GetAoiEntityTableByLevel", flow, _3, 10, 256)
+
+	if _0 == nil then
+		return
+	end
+
+	local _1 = flow:getTempList()
+
+	for k, v in ipairs(_0) do
+		local _2 = pg.getEntityByActorId(v)
+
+		flow:setCache(47, "__iterItem", _2 and _2.actorId or 0)
+
+		if _M._get_46_2(flow) then
+			_1[#_1 + 1] = _2.actorId
+		end
+	end
+
+	return _1
+end
+
+function _M._get_48_2(flow)
+	local _2 = _M._get_47_2(flow)
+	local _1 = _C(45, "SelectOneByRandom", flow, _2)
+	local _0 = _C(44, "GetDistance", flow, _1, 0, false)
+
+	return _0 <= 5
+end
+
+return _M

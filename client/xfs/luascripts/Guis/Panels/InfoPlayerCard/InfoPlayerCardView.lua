@@ -1,0 +1,46 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Guis\\Panels\\InfoPlayerCard\\InfoPlayerCardView.lua
+
+local Class = require("Core.Framework.Class")
+local UIView = require("Guis.UIView")
+local InfoPlayerCardView = Class.LightClass("InfoPlayerCardView", UIView)
+
+function InfoPlayerCardView:findObjects()
+	self.objectReference = self.transform:GetComponent("ObjectReference")
+	self.btnCloseFullScreenButton = self.objectReference:GetRefValue("btnCloseFullScreenButton")
+	self.popupUPopupForm = self.objectReference:GetRefValue("popupUPopupForm")
+	self.infoPlayerCardWidget = self.objectReference:GetRefValue("infoPlayerCardWidget")
+	self.infoPlayerPanelObjectReference = self.infoPlayerCardWidget.transform:GetComponent("ObjectReference")
+	self.rootUComponent = self.infoPlayerCardWidget.transform:GetComponent("UComponent")
+	self.playerNameText = self.infoPlayerPanelObjectReference:GetRefValue("playerNameText")
+	self.playerSignText = self.infoPlayerPanelObjectReference:GetRefValue("playerSignText")
+	self.uidText = self.infoPlayerPanelObjectReference:GetRefValue("uidText")
+	self.closeBtn = self.infoPlayerPanelObjectReference:GetRefValue("closeBtn")
+	self.headBtn = self.infoPlayerPanelObjectReference:GetRefValue("headBtn")
+	self.emblemImage = self.infoPlayerPanelObjectReference:GetRefValue("emblemImage")
+	self.playerNameChangeText = self.infoPlayerPanelObjectReference:GetRefValue("playerNameChangeText")
+	self.nameCoverText = self.infoPlayerPanelObjectReference:GetRefValue("nameCoverText")
+	self.btnFollow = self.infoPlayerPanelObjectReference:GetRefValue("btnFollow")
+	self.followNameText = self.infoPlayerPanelObjectReference:GetRefValue("followNameText")
+	self.classNumText = self.infoPlayerPanelObjectReference:GetRefValue("classNumText")
+	self.classInfoText = self.infoPlayerPanelObjectReference:GetRefValue("classInfoText")
+	self.copyBtn = self.infoPlayerPanelObjectReference:GetRefValue("copyBtn")
+	self.levelText = self.infoPlayerPanelObjectReference:GetRefValue("levelText")
+	self.interactBtnList = self.infoPlayerPanelObjectReference:GetRefValue("interactBtnList")
+	self.teamBtn = self.infoPlayerPanelObjectReference:GetRefValue("teamBtn")
+	self.teamNumText = self.infoPlayerPanelObjectReference:GetRefValue("teamNumText")
+	self.teamNameText = self.infoPlayerPanelObjectReference:GetRefValue("teamNameText")
+	self.playerBgImage = self.infoPlayerPanelObjectReference:GetRefValue("playerBgImage")
+	self.btnGatherUButton = self.infoPlayerPanelObjectReference:GetRefValue("btnGatherUButton")
+	self.collectNumUSDFText = self.infoPlayerPanelObjectReference:GetRefValue("collectNumUSDFText")
+	self.btnVoiceUButton = self.infoPlayerPanelObjectReference:GetRefValue("btnVoiceUButton")
+	self.listTogetherUList = self.infoPlayerPanelObjectReference:GetRefValue("listTogetherUList")
+	self.togetherUWidget = self.infoPlayerPanelObjectReference:GetRefValue("togetherUWidget")
+	self.hongGatherUButton = self.infoPlayerPanelObjectReference:GetRefValue("hongGatherUButton")
+
+	local hongGatherObjectReference = self.hongGatherUButton:GetComponent("ObjectReference")
+
+	self.hongGatherTxtNameUSDFText = hongGatherObjectReference:GetRefValue("txtNameUSDFText")
+	self.listBadgeUList = self.infoPlayerPanelObjectReference:GetRefValue("listBadgeUList")
+end
+
+return InfoPlayerCardView

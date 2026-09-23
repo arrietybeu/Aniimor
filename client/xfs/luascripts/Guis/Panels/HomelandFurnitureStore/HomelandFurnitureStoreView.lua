@@ -1,0 +1,46 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Guis\\Panels\\HomelandFurnitureStore\\HomelandFurnitureStoreView.lua
+
+local Class = require("Core.Framework.Class")
+local UIView = require("Guis.UIView")
+local HomelandFurnitureStoreView = Class.LightClass("HomelandFurnitureStoreView", UIView)
+
+function HomelandFurnitureStoreView:findObjects()
+	self.objectReference = self.transform:GetComponent("ObjectReference")
+	self.bottomUComponent = self.objectReference:GetRefValue("bottomUComponent")
+	self.leftUComponent = self.objectReference:GetRefValue("leftUComponent")
+	self.rightUComponent = self.objectReference:GetRefValue("rightUComponent")
+	self.textNameUSDFText = self.objectReference:GetRefValue("textNameUSDFText")
+	self.textDescriptionUSDFText = self.objectReference:GetRefValue("textDescriptionUSDFText")
+	self.textOwnUSDFText = self.objectReference:GetRefValue("textOwnUSDFText")
+	self.textMaxUSDFText = self.objectReference:GetRefValue("textMaxUSDFText")
+	self.btnBuyUButton = self.objectReference:GetRefValue("btnBuyUButton")
+	self.btnBackUButton = self.objectReference:GetRefValue("btnBackUButton")
+	self.numSelectorUNumSelector = self.objectReference:GetRefValue("numSelectorUNumSelector")
+	self.textCostUSDFText = self.objectReference:GetRefValue("textCostUSDFText")
+	self.unlockDescUSDFText = self.objectReference:GetRefValue("unlockDescUSDFText")
+	self.listCurrencyUList = self.objectReference:GetRefValue("listCurrencyUList")
+	self.lockUSDFText = self.objectReference:GetRefValue("lockUSDFText")
+	self.redeemListUList = self.objectReference:GetRefValue("redeemListUList")
+	self.redeemUNumSelector = self.objectReference:GetRefValue("redeemUNumSelector")
+	self.btnRedeemUButton = self.objectReference:GetRefValue("btnRedeemUButton")
+	self.sourceList = self.objectReference:GetRefValue("sourceList")
+	self.drawingNameUSDFText = self.objectReference:GetRefValue("drawingNameUSDFText")
+	self.drawingSourceListUList = self.objectReference:GetRefValue("drawingSourceListUList")
+	self.drawingSourceTitleUWidget = self.objectReference:GetRefValue("drawingSourceTitleUWidget")
+	self.TextTitleGetUSDFText = self.objectReference:GetRefValue("TextTitleGetUSDFText")
+	self.modelURawImage = self.objectReference:GetRefValue("modelURawImage")
+	self.buyRedeemUComponent = self.objectReference:GetRefValue("buyRedeemUComponent")
+	self.emptySoldOutUComponent = self.objectReference:GetRefValue("emptySoldOutUComponent")
+	self.sourceUWidget = self.objectReference:GetRefValue("sourceUWidget")
+	self.btnFavoriteUButton = self.objectReference:GetRefValue("btnFavoriteUButton")
+	self.scrollRectDescUScrollRect = self.objectReference:GetRefValue("scrollRectDescUScrollRect")
+	self.btnTipsUSDFText = self.objectReference:GetRefValue("btnTipsUSDFText")
+
+	local scrollRectDescobjectReference = self.scrollRectDescUScrollRect.content.transform:GetComponent("ObjectReference")
+
+	self.txtDescUSDFText = scrollRectDescobjectReference:GetRefValue("txtDescUSDFText")
+	self.txtLoadNumUSDFText = self.objectReference:GetRefValue("txtLoadNumUSDFText")
+	self.txtLiveNumUSDFText = self.objectReference:GetRefValue("txtLiveNumUSDFText")
+end
+
+return HomelandFurnitureStoreView

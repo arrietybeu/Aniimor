@@ -1,0 +1,30 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Common\\Const\\ProjectileConst.lua
+
+local ProjectileConst = {
+	MAX_PROJECTILE_HIT_COUNT_LIMIT = 64,
+	PROJECTILE_HIT_ROT_FLY_ROT = 2,
+	PROJECTILE_HIT_ROT_CASTER_ROT = 1,
+	PROJECTILE_HIT_ROT_NONE = 0,
+	FLY_MODE_FIXED_TIME = 1,
+	FLY_MODE_NORMAL = 0,
+	PROJECTILE_TYPE_BEZIER = 5,
+	PROJECTILE_TYPE_PARABOLA = 4,
+	PROJECTILE_TYPE_FREE3D = 3,
+	PROJECTILE_TYPE_LINEAR = 2,
+	PROJECTILE_TYPE_TRACKING = 1,
+	PROJECTILE_TYPE_NONE = 0
+}
+
+ProjectileConst.PROJECTILE_TYPE_PARSER = {
+	BezierCurve = 5,
+	Parabola3d = 4,
+	Free3d = 3,
+	Linear = 2,
+	Tracking = 1
+}
+ProjectileConst.PROJECTILE_HIT_ROT_PARSER = {
+	CasterRot = 1,
+	FlyRot = 2
+}
+
+return ProjectileConst

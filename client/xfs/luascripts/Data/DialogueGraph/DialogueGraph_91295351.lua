@@ -1,0 +1,192 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Data\\DialogueGraph\\DialogueGraph_91295351.lua
+
+return {
+	startNodeId = 1,
+	dialogueId = 91295351,
+	schema = 1,
+	nodes = {
+		[0] = {
+			kind = 6,
+			fields = {
+				retFlag = 0
+			},
+			flowIn = {
+				End = 0
+			}
+		},
+		{
+			kind = 8,
+			flowOut = {
+				Start = {
+					{
+						nodeId = 2,
+						portId = "In"
+					}
+				}
+			}
+		},
+		{
+			kind = 11,
+			fields = {
+				modeInfo = {
+					hideInteractionSign = true,
+					showHud = true,
+					hideAllUI = true,
+					disableSpaceFollow = true,
+					applyStateConflict = true,
+					pauseNearbyMonsterAI = true,
+					enhanceAmbientIntensity = true,
+					exitCatchMode = true,
+					resetAllActions = true,
+					blockEvent = true,
+					modeType = 2,
+					blockCameraZoom = true,
+					hideTopLogo = true,
+					hideMarkShare = true,
+					toplogoComList = {
+						teamSpeech = true,
+						quest = true,
+						photo = true,
+						petFertility = true,
+						petExchange = true,
+						petChat = true,
+						npc = true,
+						multiPlayer = true,
+						combat = true,
+						chat = true,
+						callFriends = true,
+						bubble = true,
+						alert = true,
+						battleRoom = true,
+						actionState = true,
+						vlog = true
+					}
+				}
+			},
+			flowIn = {
+				In = 0
+			},
+			flowOut = {
+				Out = {
+					{
+						nodeId = 3,
+						portId = "In"
+					}
+				}
+			}
+		},
+		{
+			kind = 2,
+			fields = {
+				portCount = 3
+			},
+			flowIn = {
+				In = 0
+			},
+			flowOut = {
+				["0"] = {
+					{
+						nodeId = 4,
+						portId = "In"
+					}
+				},
+				["1"] = {
+					{
+						nodeId = 6,
+						portId = "In"
+					}
+				},
+				["2"] = {
+					{
+						nodeId = 7,
+						portId = "Play"
+					}
+				}
+			}
+		},
+		{
+			kind = 1,
+			inputs = {
+				dialogueIdVInput = 9000618
+			},
+			fields = {
+				disableCamera = false,
+				chatType = 3,
+				blackScreenPlayType = 0,
+				blackScreenIntervalTime = 2,
+				portCount = 1,
+				skipTime = 0,
+				npcStaticId = 0,
+				npcId = 0,
+				matchAudioDuration = true,
+				duration = 11.12
+			},
+			flowIn = {
+				In = 0
+			},
+			flowOut = {
+				["0"] = {
+					{
+						nodeId = 5,
+						portId = "In"
+					}
+				}
+			}
+		},
+		{
+			kind = 21,
+			inputs = {
+				blendTimeVInput = 1
+			},
+			flowIn = {
+				In = 0
+			},
+			flowOut = {
+				Out = {
+					{
+						nodeId = 0,
+						portId = "End"
+					}
+				}
+			}
+		},
+		{
+			kind = 3,
+			inputs = {
+				blendTimeVInput = 2,
+				positionVInput = {
+					61.15,
+					56.6,
+					1036.5
+				},
+				rotationVInput = {
+					10.35,
+					90.6,
+					0.018
+				}
+			},
+			fields = {
+				visualizeDOF = false,
+				squeezeFactor = 1,
+				sensorWidth = 360,
+				recombineQuality = 0,
+				openDof = false,
+				focalDistance = 0,
+				fStop = 4,
+				cameraId = 91295184
+			},
+			flowIn = {
+				In = 0
+			}
+		},
+		{
+			kind = 31,
+			inputs = {
+				audioEventVInput = "SFX_UI_Rouge_Buff_Highlight"
+			},
+			flowIn = {
+				Play = 0
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Guis\\Panels\\InfoPlayerMain\\InfoPlayerMainView.lua
+
+local Class = require("Core.Framework.Class")
+local UIView = require("Guis.UIView")
+local InfoPlayerMainView = Class.LightClass("InfoPlayerMainView", UIView)
+
+function InfoPlayerMainView:findObjects()
+	self.objectReference = self.transform:GetComponent("ObjectReference")
+	self.btnClose = self.objectReference:GetRefValue("btnClose")
+	self.panelInfoWidget = self.objectReference:GetRefValue("panelInfoWidget")
+	self.panelEditWidget = self.objectReference:GetRefValue("panelEditWidget")
+	self.rootUComponent = self.objectReference:GetRefValue("rootUComponent")
+	self.btnAdd = self.objectReference:GetRefValue("btnAdd")
+	self.btnEdit = self.objectReference:GetRefValue("btnEdit")
+	self.btnChat = self.objectReference:GetRefValue("btnChat")
+	self.topTitleUWidget = self.objectReference:GetRefValue("topTitleUWidget")
+	self.dIYPreviewRootRectTransform = self.objectReference:GetRefValue("dIYPreviewRootRectTransform")
+	self.panelInfoObjectReference = self.panelInfoWidget.transform:GetComponent("ObjectReference")
+	self.panelInfoHeadButton = self.panelInfoObjectReference:GetRefValue("headButton")
+	self.panelInfoLevelText = self.panelInfoObjectReference:GetRefValue("levelText")
+	self.panelInfoPlayerNameText = self.panelInfoObjectReference:GetRefValue("playerNameText")
+	self.panelInfoEmblemImage = self.panelInfoObjectReference:GetRefValue("emblemImage")
+	self.panelInfoLikabilityImage = self.panelInfoObjectReference:GetRefValue("likabilityImage")
+	self.panelInfoCopyButton = self.panelInfoObjectReference:GetRefValue("copyButton")
+	self.panelInfoUidText = self.panelInfoObjectReference:GetRefValue("uidText")
+	self.panelInfoClassNumText = self.panelInfoObjectReference:GetRefValue("classNumText")
+	self.panelInfoClassInfoText = self.panelInfoObjectReference:GetRefValue("classInfoText")
+	self.panelInfoPlayerSignText = self.panelInfoObjectReference:GetRefValue("playerSignText")
+	self.panelInfoCollectList = self.panelInfoObjectReference:GetRefValue("collectList")
+	self.panelDesignationText = self.panelInfoObjectReference:GetRefValue("designationText")
+	self.panelInfoTitleBackgroundUImage = self.panelInfoObjectReference:GetRefValue("panelInfoTitleBackgroundUImage")
+	self.panelInfoTitleUSDFText = self.panelInfoObjectReference:GetRefValue("panelInfoTitleUSDFText")
+	self.panelInfoBadgeUList = self.panelInfoObjectReference:GetRefValue("panelInfoBadgeUList")
+	self.onlineIDImage = self.panelInfoObjectReference:GetRefValue("onlineIDImage")
+	self.onlineIDText = self.panelInfoObjectReference:GetRefValue("onlineIDText")
+end
+
+return InfoPlayerMainView

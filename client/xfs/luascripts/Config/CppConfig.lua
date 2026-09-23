@@ -1,0 +1,13 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Config\\CppConfig.lua
+
+local GameCppConfig = {
+	RVO_SIMULATE_TICK_COUNT = 2,
+	RVO_RTREE_BOUNDARY_RESERVE = 2,
+	RVO_AGENT_MAX_SPEED = 1,
+	RVO_AGENT_RADIUS = 0.5,
+	RVO_TIME_HORIZON_OBSTACLE = 5,
+	RVO_TIME_STEP = 1,
+	OPEN_RPC_CALL_DEBUG = false
+}
+
+return GameCppConfig

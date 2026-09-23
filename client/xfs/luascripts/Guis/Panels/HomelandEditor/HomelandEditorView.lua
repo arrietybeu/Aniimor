@@ -1,0 +1,86 @@
+﻿-- chunkname: @C:\\dev\\jkroot\\ws\\workspace\\XWinPublish\\proj\\p4dir\\client\\LuaScripts\\Guis\\Panels\\HomelandEditor\\HomelandEditorView.lua
+
+local logger = require("Core.Log.LoggerManager").getLogger("HomelandEditorView")
+local Class = require("Core.Framework.Class")
+local UIView = require("Guis.UIView")
+local HomelandEditorView = Class.LightClass("HomelandEditorView", UIView)
+
+function HomelandEditorView:findObjects()
+	self.objectReference = self.transform:GetComponent("ObjectReference")
+	self.btnBack = self.objectReference:GetRefValue("btnBack")
+	self.itemInfo = self.objectReference:GetRefValue("itemInfo")
+	self.bottomWidget = self.objectReference:GetRefValue("bottomWidget")
+	self.simpleViewCtrl = self.objectReference:GetRefValue("viewCtrl")
+	self.placeBtn = self.objectReference:GetRefValue("placeBtn")
+	self.getBtn = self.objectReference:GetRefValue("getBtn")
+	self.btnFurnitureStoreUButton = self.objectReference:GetRefValue("btnFurnitureStoreUButton")
+	self.widgetPrompt = self.objectReference:GetRefValue("widgetPrompt")
+	self.listCurrencyUList = self.objectReference:GetRefValue("listCurrencyUList")
+	self.petInfoUContainer = self.objectReference:GetRefValue("petInfoUContainer")
+	self.textUSDFText = self.objectReference:GetRefValue("textUSDFText")
+	self.btnQuitHotKey = self.objectReference:GetRefValue("btnQuitHotKeyContent")
+	self.panelUWidget = self.objectReference:GetRefValue("panelUWidget")
+	self.consoleInUWidget = self.objectReference:GetRefValue("consoleInUWidget")
+	self.btnInfoUButton = self.objectReference:GetRefValue("btnInfoUButton")
+	self.uIPbHomeEditorUWidget = self.objectReference:GetRefValue("uIPbHomeEditorUWidget")
+	self.btnDisplayUButton = self.objectReference:GetRefValue("btnDisplayUButton")
+	self.selectorMetreUSelector = self.objectReference:GetRefValue("selectorMetreUSelector")
+	self.txtCameraHeightUSDFText = self.objectReference:GetRefValue("txtNumUSDFText")
+	self.txtMUSDFText = self.objectReference:GetRefValue("txtMUSDFText")
+	self.furnitureComposeUContainer = self.objectReference:GetRefValue("furnitureComposeUContainer")
+	self.globalEditingUWidget = self.objectReference:GetRefValue("globalEditingUWidget")
+	self.moveJoyStickObjectRef = self.objectReference:GetRefValue("moveJoyStickUWidget"):GetComponent("ObjectReference")
+	self.moveJoyStick = self.moveJoyStickObjectRef:GetRefValue("joyStickUJoyStick")
+	self.btnAreaUButton = self.objectReference:GetRefValue("btnAreaUButton")
+	self.progressUProgress = self.objectReference:GetRefValue("progressUProgress")
+	self.txtDisplayUSDFText = self.objectReference:GetRefValue("txtDisplayUSDFText")
+	self.txtMetreUSDFText = self.objectReference:GetRefValue("txtMetreUSDFText")
+end
+
+function HomelandEditorView:registerPetDetail(content)
+	local objectReference = content:GetComponent("ObjectReference")
+
+	self.petInfoContent = content
+	self.petDesc = objectReference:GetRefValue("petDesc")
+	self.beenText = objectReference:GetRefValue("beenText")
+	self.txtDetailUSDFText = objectReference:GetRefValue("txtDetailUSDFText")
+	self.nameShineUSDFText1 = objectReference:GetRefValue("nameShineUSDFText1")
+	self.nameShineUSDFText2 = objectReference:GetRefValue("nameShineUSDFText2")
+	self.uINodePetPanelInfoUComponent = objectReference:GetRefValue("uINodePetPanelInfoUComponent")
+	self.btnTalentUButton = objectReference:GetRefValue("btnTalentUButton")
+	self.accessListUList = objectReference:GetRefValue("accessListUList")
+	self.abilityListUList = objectReference:GetRefValue("abilityListUList")
+	self.btnAbilityUButton = objectReference:GetRefValue("btnAbilityUButton")
+	self.infoPetName = objectReference:GetRefValue("infoPetName")
+	self.infoPetNameExtra = objectReference:GetRefValue("infoPetNameExtra")
+	self.textNO = objectReference:GetRefValue("textNO")
+	self.btnPositionUButton = objectReference:GetRefValue("btnPositionUButton")
+	self.btnEditUButton = objectReference:GetRefValue("btnEditUButton")
+	self.txtNumLiveUSDFText = objectReference:GetRefValue("txtNumLiveUSDFText")
+	self.txtTitleLiveUSDFText = objectReference:GetRefValue("txtTitleLiveUSDFText")
+	self.btnLiveUButton = objectReference:GetRefValue("btnLiveUButton")
+end
+
+function HomelandEditorView:registerComposeDetail(content)
+	local objectReference = content:GetComponent("ObjectReference")
+
+	self.composeInfoContent = content
+	self.txtNameUSDFText = objectReference:GetRefValue("txtNameUSDFText")
+	self.txtTypeUSDFText = objectReference:GetRefValue("txtTypeUSDFText")
+	self.txtDetailsUSDFText = objectReference:GetRefValue("txtDetailsUSDFText")
+	self.scrollRectUScrollRect = objectReference:GetRefValue("scrollRectUScrollRect")
+	self.btnViewUButton = objectReference:GetRefValue("btnViewUButton")
+	self.btnPlaceUButton = objectReference:GetRefValue("btnPlaceUButton")
+	self.txtBtnSetUSDFText = objectReference:GetRefValue("txtBtnSetUSDFText")
+	self.iconComposeUImage = objectReference:GetRefValue("iconComposeUImage")
+
+	local scrollRectobjectReference = self.scrollRectUScrollRect.content:GetComponent("ObjectReference")
+
+	self.txtLivabilityValueUSDFText = scrollRectobjectReference:GetRefValue("txtLivabilityValueUSDFText")
+	self.txtLoadValueUSDFText = scrollRectobjectReference:GetRefValue("txtLoadValueUSDFText")
+	self.txtTiteSizeUSDFText = scrollRectobjectReference:GetRefValue("txtTiteSizeUSDFText")
+	self.txtSizeNumUSDFText = scrollRectobjectReference:GetRefValue("txtSizeNumUSDFText")
+	self.txtDescUSDFText = scrollRectobjectReference:GetRefValue("txtDescUSDFText")
+end
+
+return HomelandEditorView
