@@ -855,7 +855,7 @@ function AbilityComponent:checkAbilityCd(abilityId)
 		return false
 	end
 
-	return not ability:isInCd()
+	return true --[[NOCD]]
 end
 
 function AbilityComponent:checkAbilityCost(abilityId)
@@ -864,6 +864,8 @@ function AbilityComponent:checkAbilityCost(abilityId)
 	if ability == nil then
 		return false, nil
 	end
+
+	if true then return true end --[[NOCOST]]
 
 	local masterEntity = Utils.isPlayer(self) and self or Utils.isPet(self) and self:getMasterEntity()
 	local castSkillFreeEpCnt = masterEntity and masterEntity.castSkillFreeEpCnt or 0

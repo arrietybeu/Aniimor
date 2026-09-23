@@ -658,7 +658,7 @@ function ClientRobSpaceEgg:receiveFallToGroundDamage(height)
 		local curCombatPet = controller.petPrepareList[1] and pg.getEntity(controller.petPrepareList[1])
 
 		if curCombatPet then
-			curCombatPet:serverMsg("RPC_CS_SpecialDamage", Utils.calcFallToGroundDamage(height), Const.LIFE_DEAD_BY_FALL_TO_GROUND)
+			curCombatPet:serverMsg("RPC_CS_SpecialDamage", 0 --[[SPDMG0]], Const.LIFE_DEAD_BY_FALL_TO_GROUND)
 		end
 
 		self:reportEggHurt(self:calcEggFallHurtTimes(height), Const.LIFE_DEAD_BY_FALL_TO_GROUND)
