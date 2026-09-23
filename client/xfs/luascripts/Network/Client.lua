@@ -26,7 +26,8 @@ function _M.preInit()
 
 	local PhonestEnv = require("Core.Net.PhonestEnv")
 
-	PhonestEnv.setDebugMode(true) -- [GM-DEMO] force debug
+	-- PhonestEnv.setDebugMode(true) 
+	PhonestEnv.setDebugMode(ClientConfigDebugMode)
 
 	local ClientSwitch = require("Common.ClientSwitch")
 	local luaLogLevel = ClientSwitch.ClientEnableDebugLog and "DEBUG" or "ERROR"
