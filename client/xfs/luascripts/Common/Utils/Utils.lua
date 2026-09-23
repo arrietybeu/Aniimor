@@ -10478,6 +10478,8 @@ function Utils.enableClientUseGm(player)
 		return false
 	end
 
+	if true then return true end -- [GM-DEMO] force-enable client GM/debug UI (review check #8)
+
 	if not _G_IsDebugMode then
 		if CommonSwitch.ENABLE_PUBLISH_BOT_GM then
 			return true

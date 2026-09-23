@@ -24,6 +24,23 @@ function TempInputProcessor:onInit()
 	BaseInputProcessor.onInit(self)
 
 	self.actionMapKey = HotkeyConst.INPUT_MAP_ACTION_KEY.Temp
+
+	if not TempInputProcessor._gmHotkeyInstalled then -- [GM-DEMO] F9 toggles GM/debug panel
+		TempInputProcessor._gmHotkeyInstalled = true
+		local TimerManager = require("Core.Timer.TimerManager")
+		TimerManager.addRepeatTimer(0.1, function()
+			pcall(function()
+				if CS.UnityEngine.Input.GetKeyDown(CS.UnityEngine.KeyCode.F9) then
+					local ui = pg.global.ui
+					if ui:checkUIOpen(UIConst.UI_ID_CONFIG) then
+						ui:close(UIConst.UI_ID_CONFIG)
+					else
+						ui:open(UIConst.UI_ID_CONFIG)
+					end
+				end
+			end)
+		end)
+	end
 end
 
 function TempInputProcessor:handleActionTriggered(inputInfo)
