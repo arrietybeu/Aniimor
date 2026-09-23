@@ -648,7 +648,7 @@ function ClientCombatEntityComponent:doDieWithAutoRevive(reason, blackScreenId, 
 
 		bloodProportion = bloodProportion and bloodProportion or 1
 
-		self:serverMsg("RPC_CS_SpecialDamage", 0 --[[SPDMG0]], reason)
+		self:serverMsg("RPC_CS_SpecialDamage", bloodProportion, reason)
 	end
 end
 

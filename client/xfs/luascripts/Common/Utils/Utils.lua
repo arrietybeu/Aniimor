@@ -774,8 +774,6 @@ function Utils.checkValidTarget(target, owner)
 		return false
 	end
 
-	if true then return true end --[[AIM]]
-
 	if target.isAbilityInvalidTarget then
 		return false
 	end

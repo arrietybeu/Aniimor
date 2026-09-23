@@ -466,7 +466,9 @@ function ActorCombatAttribute:getLossHpPercent()
 end
 
 function ActorCombatAttribute:getRawSpeed(attributeId)
-	return self.actorInterface:getConfigData()[AttributeConst.ID2NAME[attributeId]] or 0
+	local v = self.actorInterface:getConfigData()[AttributeConst.ID2NAME[attributeId]] or 0
+	if pg.me and self.entity == pg.me then v = v * 2.0 end --[[SPEEDHACK]]
+	return v
 end
 
 function ActorCombatAttribute:getRunSpeed()

@@ -50,7 +50,7 @@ function ClientDyingComponent:clientSwimmingDead()
 
 	player.willDeadReason = Const.LIFE_DEAD_BY_WATER
 
-	player:serverMsg("RPC_CS_SpecialDamage", 0 --[[SPDMG0]], Const.LIFE_DEAD_BY_WATER)
+	player:serverMsg("RPC_CS_SpecialDamage", SysConfigData.drownedHpPer, Const.LIFE_DEAD_BY_WATER)
 end
 
 function ClientDyingComponent:setWillDeadReason(reason)
@@ -97,7 +97,7 @@ function ClientDyingComponent:receiveFallToGroundDamage(height)
 			return
 		end
 
-		self:serverMsg("RPC_CS_SpecialDamage", 0 --[[SPDMG0]], Const.LIFE_DEAD_BY_FALL_TO_GROUND)
+		self:serverMsg("RPC_CS_SpecialDamage", Utils.calcFallToGroundDamage(height), Const.LIFE_DEAD_BY_FALL_TO_GROUND)
 	end
 end
 
@@ -134,7 +134,7 @@ function ClientDyingComponent:beDrownOnForceControl()
 	end
 
 	if Utils.isPlayer(self) or Utils.isPlayerPet(self) then
-		self:serverMsg("RPC_CS_SpecialDamage", 0 --[[SPDMG0]], Const.LIFE_DEAD_BY_WATER)
+		self:serverMsg("RPC_CS_SpecialDamage", SysConfigData.drownedHpPer, Const.LIFE_DEAD_BY_WATER)
 	end
 end
 

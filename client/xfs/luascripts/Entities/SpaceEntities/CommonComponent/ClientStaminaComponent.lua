@@ -451,6 +451,7 @@ function ClientStaminaComponent:checkFlyingSkillAndCast(controledPawn)
 end
 
 function ClientStaminaComponent:costStamina(stateTag, staminaTag, cost)
+	if true then return end --[[INFSTAM]]
 	if cost <= 0 or self.gmMode == Const.NO_COST_MODE then
 		return
 	end
